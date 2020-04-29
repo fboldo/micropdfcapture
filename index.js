@@ -33,6 +33,7 @@ app.post(
       const content = await capture({ url: req.body.url, html: req.body.html });
       res.send(content);
     } catch (e) {
+      console.log(e);
       res.status(500).send(JSON.stringify(e));
     }
   }
