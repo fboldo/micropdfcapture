@@ -8,7 +8,6 @@ const capture = async (event) => {
   const { url, html } = event;
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto(url, { waitUntil: "networkidle0" });
   if (html) {
     await page.setContent(html);
   } else if (url) {
@@ -39,6 +38,6 @@ app.post(
   }
 );
 
-app.listen("8080", () => {
+app.listen("8182", () => {
   console.log("Server running on port 8080");
 });
