@@ -16,6 +16,7 @@ const capture = async (event) => {
     await page.goto(url);
   }
   const content = await page.pdf();
+  await browser.close();
   return content.toString("base64");
 };
 
